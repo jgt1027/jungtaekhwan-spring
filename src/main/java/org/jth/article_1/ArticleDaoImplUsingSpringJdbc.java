@@ -1,7 +1,8 @@
-package org.jth.article;
+package org.jth.article_1;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -11,7 +12,8 @@ import org.springframework.stereotype.Repository;
  * 
  * @author Jacob
  */
-@Repository("ArticleDao")
+@Repository("articleDao")
+
 public class ArticleDaoImplUsingSpringJdbc implements ArticleDao {
 	/**
 	 * 목록 가져오는 sql
@@ -38,6 +40,7 @@ public class ArticleDaoImplUsingSpringJdbc implements ArticleDao {
 	 */
 	static final String DELETE_ARTICLE = "DELETE FROM article WHERE articleId=?";
 
+	@Autowired
 	JdbcTemplate jdbcTemplate;
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {

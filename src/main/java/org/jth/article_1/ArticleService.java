@@ -1,7 +1,8 @@
-package org.jth.article;
+package org.jth.article_1;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ArticleService {
 
+	@Autowired
 	ArticleDao articleDao;
 
 	public void setArticleDao(ArticleDao articleDao) {
